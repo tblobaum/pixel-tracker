@@ -19,7 +19,7 @@ tracker.use(function (e, res) {
     { 
       host: 'localhost:3000',
       domain: 'localhost',
-      path: '/track',
+      path: '/pixel',
       geo: { ip: '127.0.0.1' } 
       ua: { browser: 'Chrome', version: '13.0' },
       cookies: { _tracker: '0rc8ba4t9fgjp9hz' },
@@ -34,7 +34,7 @@ tracker.use(function (e, res) {
 
 app.all('/pixel', tracker.middleware)
 
-app.listen
+app.listen()
 
 ````
 
