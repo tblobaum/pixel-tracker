@@ -1,28 +1,40 @@
+var express = require('express');
 var test = require("tap").test
 var pixelTracker = require("../") //Load the parent directory, looks for index.js 
-var connect = require("connect")
 var http = require('http')
 
 test("testing pixel tracker",function(t){
 
-  var server = connect.createServer(connect.cookieParser())
+  var app = module.exports = express.createServer();
 
-  server.use(
-    connect.router(function(app){
-      app.get('/pixel',pixelTracker.middleware)
-    })
-  )
-
-  server.listen(3000)
+  app.configure(function(){
+    app.use(express.bodyParser());
+    app.use(express.cookieParser());
+    app.use(express.methodOverride());
+    app.use(app.router);
+    app.use(express.static(__dirname + '/public'));
+  });
 
   pixelTracker.use(function(e,res){
     console.log(res)
+    t.type(res.decay,'number','Decay is a number')
+    t.type(res.cookies._tracker,'number','_tracker should be created for all request')
+    t.notOk(res.ua.browser,'For testing, user agent browser should be false')
+    t.type(res.host,'string','host should valid')
+    t.type(res.domain,'string','domain should valid')
+    //t.ok(res.path,'/pixel','path should be /pixel')
+    // t.type(res.geo.ip,'string','ip should valid')
+    // t.ok(res.referer,'','referer is empty for test')
+    t.end()
   })
+
+  app.all('/pixel',pixelTracker.middleware)
+  app.listen(3000);
+
 
 
   http.get({host:'localhost',port:3000,path:'/pixel',agent:false},function(res){
-    console.log("response from the pixel tracker...")
+    // Stop the server
+    process.exit(0)
   })
-
-  t.end()
 })
