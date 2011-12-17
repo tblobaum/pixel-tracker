@@ -16,7 +16,6 @@ test("testing pixel tracker",function(t){
   });
 
   pixelTracker.use(function(e,res){
-    console.log(res)
     t.type(res.decay,'number','Decay is a number')
     t.type(res.cookies._tracker,'number','_tracker should be created for all request')
     t.notOk(res.ua.browser,'For testing, user agent browser should be false')
@@ -30,8 +29,6 @@ test("testing pixel tracker",function(t){
 
   app.all('/pixel',pixelTracker.middleware)
   app.listen(3000);
-
-
 
   http.get({host:'localhost',port:3000,path:'/pixel',agent:false},function(res){
     // Stop the server
