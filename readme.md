@@ -2,6 +2,7 @@ pixel-tracker
 =============
 A simple pixel-tracker for node.js
 
+[![Build Status](https://secure.travis-ci.org/analytics-machine/pixel-tracker.png)](http://travis-ci.org/analytics-machine/pixel-tracker)
 
 Example
 -------
