@@ -2,7 +2,7 @@
   "author": "Thomas Blobaum <tblobaum@gmail.com> (https://github.com/tblobaum)",
   "name": "pixel-tracker",
   "description": "a simple pixel tracker for node.js",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "homepage": "https://github.com/analytics-machine/pixel-tracker",
   "repository": {
     "url": ""
