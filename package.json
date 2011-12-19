@@ -1,8 +1,12 @@
 {
   "author": "Thomas Blobaum <tblobaum@gmail.com> (https://github.com/tblobaum)",
+  "contributors": [
+      { "name": "Butu Kumar", "url": "https://github.com/butu5/" },
+      { "name": "Beau Sorensen", "url": "https://github.com/sorensen/" }
+  ],
   "name": "pixel-tracker",
   "description": "a simple pixel tracker for node.js",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage": "https://github.com/analytics-machine/pixel-tracker",
   "repository": {
     "url": ""
