@@ -15,17 +15,24 @@ test("testing pixel tracker",function(t){
     app.use(express.static(__dirname + '/public'));
   });
 
-  pixelTracker.use(function(e,res){
-    t.type(res.decay,'number','Decay is a number')
-    t.type(res.cookies._tracker,'number','_tracker should be created for all request')
-    t.notOk(res.ua.browser,'For testing, user agent browser should be false')
-    t.type(res.host,'string','host should valid')
-    t.type(res.domain,'string','domain should valid')
-    //t.ok(res.path,'/pixel','path should be /pixel')
-    // t.type(res.geo.ip,'string','ip should valid')
-    // t.ok(res.referer,'','referer is empty for test')
-    t.end()
-  })
+  pixelTracker
+    .use(function(e,res){
+      t.type(res.decay,'number','Decay is a number')
+      t.type(res.cookies._tracker,'string','_tracker should be created for all request')
+      t.notOk(res.ua,'For testing, user agent browser should be false')
+      t.type(res.host,'string','host should valid')
+      t.type(res.domain,'string','domain should valid')
+      t.type(res.geo.ip,'string','ip should valid')
+    })
+    .use(function(e,res){
+      t.type(res.decay,'number','Decay is a number')
+      t.type(res.cookies._tracker,'string','_tracker should be created for all request')
+      t.notOk(res.ua,'For testing, user agent browser should be false')
+      t.type(res.host,'string','host should valid')
+      t.type(res.domain,'string','domain should valid')
+      t.type(res.geo.ip,'string','ip should valid')
+      t.end()
+    })
 
   app.all('/pixel',pixelTracker.middleware)
   app.listen(3000);
