@@ -14,7 +14,7 @@
     "test": "node test/pixel-tracker.js"
   },
   "engines": {
-    "node": "~0.6.1"
+    "node": "~0.6.x"
   },
   "dependencies": {
     "underscore": "~1.2.3",
