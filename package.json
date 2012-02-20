@@ -6,7 +6,7 @@
   "name": "pixel-tracker",
   "description": "a simple pixel tracker for node.js",
   "version": "0.0.2",
-  "homepage": "https://github.com/analytics-machine/pixel-tracker",
+  "homepage": "https://github.com/blobaum/pixel-tracker",
   "repository": {
     "url": ""
   },
