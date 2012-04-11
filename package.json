@@ -1,11 +1,11 @@
 {
   "author": "Thomas Blobaum <tblobaum@gmail.com> (https://github.com/tblobaum)",
   "contributors": [
-      { "name": "Butu Kumar", "url": "https://github.com/butu5/" }
+    "Butu Kumar (https://github.com/butu5/)"
   ],
   "name": "pixel-tracker",
   "description": "a simple pixel tracker for node.js",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "homepage": "https://github.com/blobaum/pixel-tracker",
   "repository": {
     "url": ""
@@ -22,5 +22,6 @@
   "devDependencies": {
     "express": "~2.5.2",
     "tap": "~0.0.5"
-  }
+  },
+  "optionalDependencies": {}
 }
