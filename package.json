@@ -21,8 +21,8 @@
   },
   "homepage" : "https://github.com/tblobaum/pixel-tracker",
   "keywords" : [
-    "redis",
-    "stream"
+    "pixel",
+    "tracker"
   ],
   "author" : {
     "name" : "Thomas Blobaum",
