@@ -54,7 +54,7 @@ The `callback` function is called with `error`, `result`. Multiple callbacks can
 pixel-tracker has a few configurable options.
 
 `disable_cookies` defaults to false
-`expires` defaults to 15 minutes, which may not be desirable based on your use case
+`maxAge` defaults to 2 days, which may not be desirable based on your use case
 
 ## tracker.middleware(request, response)
 A function to be called for each http request which calls `response.end` with a 1x1 pixel for every request and then calls all the functions provided with `tracker.use`. This works out of the box with express and would also work with any vanilla http server as long as a cookies implementation is provided for the response object (or cookies are disabled)
