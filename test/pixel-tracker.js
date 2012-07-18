@@ -1,10 +1,12 @@
 var express = require('express')
   , test = require('tap').test
   , tracker = require('../')
+  , server
+  , app
 
 test('testing pixel tracker', function (t) {
 
-  var app = express.createServer()
+  app = express.createServer()
 
   app.configure(function () {
     app.use(express.cookieParser())
@@ -30,15 +32,15 @@ test('testing pixel tracker', function (t) {
     })
 
   app.all('/pixel', tracker.middleware)
-  app.listen(3000)
+  server = app.listen(3000)
 
   require('http').get({ 
       host : 'localhost'
     , port : 3000
     , path : '/pixel'
     , agent : false
-  }, function (res) {
-    app.close()
+  }, function () {
+    server.close()
   })
 
 })
