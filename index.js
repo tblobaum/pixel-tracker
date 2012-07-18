@@ -4,7 +4,7 @@ var fs = require('fs')
   , url = require('url')
   , pixel = fs.readFileSync(__dirname + '/pixel.gif')
   , fns = []
-  , conf = { disable_cookies : false, expires : 900000 }
+  , conf = { disable_cookies : false, maxAge: 2592000000 }
  
 function use (fn) {
   if (typeof fn === 'function') {
@@ -26,7 +26,7 @@ function middleware (req, res, next) {
     _getUserToken(function (e, token) {
       req.cookies._tracker = token
       res.cookie('_tracker', req.cookies._tracker, { 
-          expires : new Date(Date.now() + conf.expires)
+          maxAge : conf.maxAge
         , httpOnly : true 
       })
       res.end(pixel, 'binary')
