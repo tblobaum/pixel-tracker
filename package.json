@@ -1,27 +1,37 @@
 {
-  "author": "Thomas Blobaum <tblobaum@gmail.com> (https://github.com/tblobaum)",
-  "contributors": [
-    "Butu Kumar (https://github.com/butu5/)"
+  "name" : "pixel-tracker",
+  "version" : "0.0.4",
+  "description" : "a simple pixel tracker for node",
+  "main" : "index.js",
+  "bin" : {},
+  "directories" : {
+    "test" : "test"
+  },
+  "dependencies" : { },
+  "devDependencies" : {
+    "express": "~2.x.x",
+    "tap" : "~0.2.5"
+  },
+  "scripts" : {
+    "test" : "tap test/*.js"
+  },
+  "repository" : {
+    "type" : "git",
+    "url" : "git://github.com/tblobaum/pixel-tracker.git"
+  },
+  "homepage" : "https://github.com/tblobaum/pixel-tracker",
+  "keywords" : [
+    "redis",
+    "stream"
   ],
-  "name": "pixel-tracker",
-  "description": "a simple pixel tracker for node.js",
-  "version": "0.0.3",
-  "homepage": "https://github.com/blobaum/pixel-tracker",
-  "repository": {
-    "url": ""
+  "author" : {
+    "name" : "Thomas Blobaum",
+    "email" : "tblobaum@gmail.com",
+    "url" : "https://github.com/tblobaum/"
   },
-  "scripts": {
-    "test": "node test/pixel-tracker.js"
-  },
-  "engines": {
-    "node": "~0.6.x"
-  },
-  "dependencies": {
-    "sequence": "~2.1.1"
-  },
-  "devDependencies": {
-    "express": "~2.5.2",
-    "tap": "~0.0.5"
-  },
-  "optionalDependencies": {}
+  "contributors": [
+    "Butu Kumar (https://github.com/butu5/)",
+    "eethann (https://github.com/eethann)"
+  ],
+  "license" : "MIT"
 }
