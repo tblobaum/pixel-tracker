@@ -85,7 +85,9 @@ function middleware (req, res, next) {
   
   function _getRemoteAddress (callback) {
     var rc = req.connection
-    if (req.socket && req.socket.remoteAddress) 
+    if (req.header('x-forwarded-for'))
+      callback(req.header('x-forwarded-for'))
+    else if (req.socket && req.socket.remoteAddress) 
       callback(req.socket.remoteAddress)
     else if (rc) 
       if (rc.remoteAddress)
