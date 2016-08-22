@@ -4,7 +4,8 @@ var fs = require('fs')
   , url = require('url')
   , pixel = fs.readFileSync(__dirname + '/pixel.gif')
   , fns = []
-  , conf = { disable_cookies : false, maxAge: 2592000000 }
+  , conf = { disable_cookies : false, maxAge: 2592000000, cookieName: '_tracker', ip: false,
+  noRefreshPath: ''}
  
 function use (fn) {
   if (typeof fn === 'function') {
@@ -21,11 +22,11 @@ function configure (obj) {
 }
 
 function middleware (req, res, next) {
-
-  if (!conf.disable_cookies && (!req.cookies || !req.cookies._tracker)) {
+  if (!conf.disable_cookies && (!req.cookies || !req.cookies[conf.cookieName])
+      && req.path !== conf.noRefreshPath) {
     _getUserToken(function (e, token) {
-      req.cookies._tracker = token
-      res.cookie('_tracker', req.cookies._tracker, { 
+      req.cookies[conf.cookieName] = token
+      res.cookie(conf.cookieName, req.cookies[conf.cookieName], {
           maxAge : conf.maxAge
         , httpOnly : true 
       })
@@ -39,11 +40,15 @@ function middleware (req, res, next) {
   var response = { 
       cookies : req.cookies || req.headers.cookies || {}
     , host : req.headers.host
+    , path : req.path
     , cache : qs.parse(req.headers['cache-control']) || {}
     , referer : (req.headers.referer || req.headers.referrer || 'direct')
     , params : (req.params || {})
   }
 
+  if(conf.ip === true){
+    response.ip = req.ip
+  }
   req.query = req.query || {}
 
   _getDecay(req.query.decay, function (e, decay) {
