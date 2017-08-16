@@ -1,6 +1,6 @@
 {
-  "name" : "pixel-tracker",
-  "version" : "0.0.6",
+  "name" : "node-pixel-tracker",
+  "version" : "0.1.0",
   "description" : "a simple pixel tracker for node",
   "main" : "index.js",
   "bin" : {},
@@ -17,23 +17,24 @@
   },
   "repository" : {
     "type" : "git",
-    "url" : "git://github.com/tblobaum/pixel-tracker.git"
+    "url" : "git://github.com/mfahlandt/node-pixel-tracker.git"
   },
-  "homepage" : "https://github.com/tblobaum/pixel-tracker",
+  "homepage" : "https://github.com/mfahlandt/node-pixel-tracker",
   "keywords" : [
     "pixel",
     "tracker"
   ],
   "author" : {
-    "name" : "Thomas Blobaum",
-    "email" : "tblobaum@gmail.com",
-    "url" : "https://github.com/tblobaum/"
+    "name" : "Mario Fahlandt",
+    "email" : "mfahlandt@pixel-haufen.de",
+    "url" : "https://github.com/mfahlandt/"
   },
   "contributors": [
     "Butu Kumar (https://github.com/butu5/)",
     "eethann (https://github.com/eethann)",
     "Noah H. Smith (https://github.com/noazark)",
-    "Qasim Zaidi (https://github.com/qzaidi)"
+    "Qasim Zaidi (https://github.com/qzaidi)",
+    "Thomas Blobaum (https://github.com/tblobaum/)"
   ],
   "license" : "MIT"
 }

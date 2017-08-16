@@ -1,7 +1,9 @@
-# pixel-tracker  
-A simple pixel-tracker for node.js
+# node-pixel-tracker  
+A simple pixel-tracker for node.js based on https://github.com/tblobaum/pixel-tracker
 
 [![Build Status](https://secure.travis-ci.org/tblobaum/pixel-tracker.png)](http://travis-ci.org/tblobaum/pixel-tracker)
+
+
 
 # Example
 
